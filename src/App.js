@@ -7,7 +7,7 @@ const App = () => {
     const [data,setData] = useState('')
     const [dark,setDark] = useState(false)
     const getValues = async ()=>{
-        const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${value}&appid=7c7c180a9582489ed9b78155e63b8d28&units=metric`)
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=7c7c180a9582489ed9b78155e63b8d28&units=metric`)
         if(response.status===200){
         const data = await response.json()
         setData(data.main.temp)
