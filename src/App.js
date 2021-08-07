@@ -31,10 +31,10 @@ const App = () => {
         <div className={dark ? "dark" : "light"}>
             <TextField variant="outlined" label="Enter city name" value={value} onChange={(e) => setValue(e.target.value)}></TextField>
             <h1>{value}</h1>
-            <Button variant="contained" style={{margin:"10px", width:"400px"}} color="primary" onClick={getValues}>Get</Button>
+            <Button variant="contained" style={{margin:"10px"}} color="primary" onClick={getValues}>Get</Button>
             <Button variant="contained" style={{margin:"10px"}} onClick={theme} color="secondary">Dark Mode</Button>
             
-            <h1>{disdata.temp?`The temperature is: ${disdata.temp} °C`:'No results'}</h1>
+            <h2>{disdata.temp?`The temperature is: ${disdata.temp} °C`:'No results'}</h2>
             <h2>{disdata.temp?`The min temp is: ${disdata.min} °C`:''}</h2>
             <h2>{disdata.temp?`The max temp is: ${disdata.max} °C`:''}</h2>
             <h2>{disdata.temp?`The humidity is: ${disdata.hum}%`:''}</h2>
