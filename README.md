@@ -1,6 +1,6 @@
 # Getting Started with Create React App
+Hosted at - https://gagan9760.github.io/weather/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
