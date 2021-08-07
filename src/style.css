@@ -2,6 +2,22 @@ body{
     margin: 0;
     padding: 0;
     height: 100vh;
+    
+
+}
+.light{
+    height: 100vh;
+   
     display: grid;
     place-content: center;
+    transition: 1s all;
+}
+.dark{
+    height: 100vh;
+    background-color: rgb(60, 60, 61);
+   
+    
+    display: grid;
+    place-content: center;
+    transition: 1s all;
 }
