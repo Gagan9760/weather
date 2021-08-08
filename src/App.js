@@ -49,7 +49,7 @@ const App = () => {
     return (
         <ThemeProvider theme={theme}>
             <Paper>
-            <Grid className={disdata.type==="Thunderstorm"||disdata.type==="Rain"?"conrain":(disdata.type=="Clouds"?"concloud":(disdata.type=="Clear"?"consunny":"con"))} container>
+            <Grid className={disdata.type==="Thunderstorm"||disdata.type==="Rain"||disdata.type==="Drizzle"?"conrain":(disdata.type=="Clouds"?"concloud":(disdata.type=="Clear"?"consunny":"con"))} container>
                 <Grid className="item" item xs={12} >
                     <Nav dark={dark} setDark={setDark}/>
                 </Grid>
