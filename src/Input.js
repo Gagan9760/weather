@@ -20,7 +20,7 @@ const Input = ({value,disdata,setValue,getValues}) => {
                         initial={{y:-50,opacity:0}}
                         animate={{y:0,opacity:1,transition:{delay:1}}}
                         whileTap={{scale:0.9}}
-                        whileHover={{scale:1.1}}
+                        whileHover={{scale:1.03}}
                         variant="contained" style={{ margin: "10px" }} color="primary" onClick={getValues}>Get</Button>
                         </div>
                         <Data disdata={disdata} />
