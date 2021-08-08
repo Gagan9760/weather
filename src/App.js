@@ -4,7 +4,7 @@ import { Grid, Paper } from '@material-ui/core'
 import Nav from './Nav'
 import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 import Input from './Input';
-import { motion } from "framer-motion";
+import { motion,} from "framer-motion";
 
 
 const App = () => {
@@ -45,7 +45,7 @@ const App = () => {
     }
     return (
         <ThemeProvider theme={theme}>
-            {/* FOR DYNAMIC BG */}
+            
             <Paper className={disdata.type === "Thunderstorm" || disdata.type === "Rain" || disdata.type === "Drizzle" ? "conrain" : (disdata.type === "Clouds" ? "concloud" : (disdata.type === "Clear" ? "consunny" : "con"))}>
                 <Grid container>
                     {/* NAVBAR START */}
@@ -85,6 +85,7 @@ const App = () => {
                     <Grid className="item" item xs={0} sm={3} />
                 </Grid>
             </Paper>
+            
         </ThemeProvider>
     )
 }

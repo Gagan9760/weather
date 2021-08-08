@@ -1,12 +1,17 @@
 import React from 'react'
 import { Button, TextField,Paper, Typography } from '@material-ui/core'
 import Data from './Data'
-import { motion } from "framer-motion";
+import { motion,AnimateSharedLayout } from "framer-motion";
 
 
 const Input = ({value,disdata,setValue,getValues}) => {
     return (
         <>
+        
+            <AnimateSharedLayout>
+                <motion.div layout
+                
+                >
             <Paper className="pap" elevation={10}>
                         <div className="paper">
                         <TextField
@@ -26,6 +31,8 @@ const Input = ({value,disdata,setValue,getValues}) => {
                         <Data disdata={disdata} />
                     
                     </Paper>
+                    </motion.div>
+            </AnimateSharedLayout>
         </>
     )
 }
