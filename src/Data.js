@@ -1,33 +1,39 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Grid, Paper, Typography } from '@material-ui/core'
-import { motion } from 'framer-motion'
+import { motion} from 'framer-motion'
+
 
 const Data = ({ disdata }) => {
+    const[click,setClick] = useState(false)
     return (
+        
         <Grid container spacing={2}>
             <Grid item xs={2} />
             <Grid item xs={8}>
-                <motion.div
+                
+                <motion.div 
                     initial={{ y: -50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1, transition: { delay: 1 } }}
-                    whileHover={{ scale: 1.2 }}
+                    whileHover={{ scale: 1.1 }}
                 >
-                    <Paper className="temp">
+                    <Paper className="temp" onClick={()=>setClick(!click)}>
                         <Typography variant="h5" align="center">
                             {disdata.temp ? `Temp: ${disdata.temp} °C` : 'No results'}
                         </Typography>
                         <Typography variant="h6" align="center">
                             {disdata.temp ? `${disdata.type}` : ""}
+                            
                         </Typography>
                     </Paper>
                 </motion.div>
+                
             </Grid>
             <Grid item xs={2} />
             <Grid item xs={1} />
             <Grid item xs={5}>
 
                 {disdata.temp &&
-                    <motion.div
+                    <motion.div layout
                         initial={{ y: -50, opacity: 0 }}
                         animate={{ y: 0, opacity: 1, transition: { delay: 0.3 } }}
                         whileHover={{ scale: 1.1 }}
@@ -41,11 +47,12 @@ const Data = ({ disdata }) => {
                             </Typography>
                         </Paper>
                     </motion.div>
+                    
                 }
             </Grid>
             <Grid item xs={5}>
                 {disdata.temp &&
-                    <motion.div
+                    <motion.div layout
                         initial={{ y: -50, opacity: 0 }}
                         animate={{ y: 0, opacity: 1, transition: { delay: 0.5 } }}
                         whileHover={{ scale: 1.1 }}
@@ -65,7 +72,7 @@ const Data = ({ disdata }) => {
             <Grid item xs={1} />
             <Grid item xs={10}>
                 {disdata.temp &&
-                    <motion.div
+                    <motion.div layout
                         initial={{ y: -50, opacity: 0 }}
                         animate={{ y: 0, opacity: 1, transition: { delay: 0.8 } }}
                         whileHover={{ scale: 1.1 }}
@@ -79,6 +86,7 @@ const Data = ({ disdata }) => {
                 }
             </Grid>
         </Grid>
+       
     )
 }
 

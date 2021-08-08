@@ -36,6 +36,8 @@ const App = () => {
                 max: data.main.temp_max,
                 hum: data.main.humidity,
                 type: data.weather[0].main,
+                feel: data.main.feels_like,
+                pres: data.main.pressure
 
             })
 
@@ -65,6 +67,7 @@ const App = () => {
                         <Nav dark={dark} setDark={setDark} />
                     </Grid>
                     {/* NAVBAR END */}
+                    
                     <Grid className="item" item xs={0} sm={3} />
                     <Grid className="item2" 
                     component={motion.div} 
