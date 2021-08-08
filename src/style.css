@@ -26,8 +26,9 @@ h1,h2{
     transition: 0.5s all;
 }
 .con{
-    background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 35%, rgba(148,187,233,1) 100%); ;
+    overflow-x: hidden;
+    /* background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 35%, rgba(148,187,233,1) 100%); ; */
 }
 
 .item2{
@@ -47,8 +48,9 @@ h1,h2{
     padding: 30px;
 }
 .pap{
+    
 padding: 20px;
 }
 .minmax{
-    padding: 20px;
+    padding: 10px;
 }
