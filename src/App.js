@@ -45,8 +45,10 @@ const App = () => {
     }
     return (
         <ThemeProvider theme={theme}>
+            {/* FOR DYNAMIC BG */}
             <Paper className={disdata.type === "Thunderstorm" || disdata.type === "Rain" || disdata.type === "Drizzle" ? "conrain" : (disdata.type === "Clouds" ? "concloud" : (disdata.type === "Clear" ? "consunny" : "con"))}>
                 <Grid container>
+                    {/* NAVBAR START */}
                     <Grid
                         component={motion.nav}
                         initial={{
@@ -62,6 +64,7 @@ const App = () => {
                         }} className="item" item xs={12} >
                         <Nav dark={dark} setDark={setDark} />
                     </Grid>
+                    {/* NAVBAR END */}
                     <Grid className="item" item xs={0} sm={3} />
                     <Grid className="item2" 
                     component={motion.div} 
