@@ -13,7 +13,7 @@ h1,h2{
 }
 .con{
     transition: 1.5s all;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     background: rgb(238,174,202);
     background: radial-gradient(circle, rgba(238,174,202,1) 35%, rgba(148,187,233,1) 100%); ;
 }
