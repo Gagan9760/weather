@@ -4,33 +4,34 @@ body{
     font-family: Roboto;
     font-weight: 100;
     overflow: hidden;
+    
 }
 
-/* .light{
-    height: 100vh;
-    overflow:hidden ;
-    display: grid;
-    place-content: center;
-    transition: 0.5s all;
-}
-.dark{
-    height: 100vh;
-    background-color: rgb(82, 82, 82);
-    color: white;
-    overflow:hidden ;
-    display: grid;
-    place-content: center;
-    transition: 0.5s all;
-} */
+
 h1,h2{
     transition: 0.5s all;
 }
 .con{
     overflow-x: hidden;
-    /* background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 35%, rgba(148,187,233,1) 100%); ; */
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 35%, rgba(148,187,233,1) 100%); ;
+}
+.conrain{
+    transition: 1.5s all;
+    background-image: url('./Images/rainy.jpg');
+    background-size: 1620px 1080px;
 }
 
+.concloud{
+    transition: 1.5s all;
+    background-image: url('./Images/cloudy.jpg');
+    background-size: 1620px 1080px;
+}
+.consunny{
+    transition: 1.5s all;
+    background-image: url('./Images/sunny.jpg');
+    background-size: 1620px 1080px;
+}
 .item2{
     
     height: 100vh;
@@ -48,9 +49,17 @@ h1,h2{
     padding: 30px;
 }
 .pap{
+    opacity: 0.9;
+    backdrop-filter:blur(20px);
     
 padding: 20px;
 }
 .minmax{
     padding: 10px;
+    
+}
+@media screen and (max-width:500px){
+    .conrain,.concloud,.consunny{
+        background-size: 1200px 900px;
+    }
 }

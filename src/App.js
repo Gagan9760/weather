@@ -10,7 +10,13 @@ const App = () => {
     const [dark, setDark] = useState(false)
     const theme = createTheme({
         palette:{
-            type:dark?"dark":"light"
+            type:dark?"dark":"light",
+            primary:{
+                main:"#2B6BD6"
+            },
+            secondary:{
+                main:"#1B419C"
+            }
         }
     })
 
@@ -27,7 +33,8 @@ const App = () => {
                 temp: data.main.temp,
                 min: data.main.temp_min,
                 max: data.main.temp_max,
-                hum: data.main.humidity
+                hum: data.main.humidity,
+                type: data.weather[0].main,
 
             })
 
@@ -42,18 +49,17 @@ const App = () => {
     return (
         <ThemeProvider theme={theme}>
             <Paper>
-            <Grid className="con" container>
+            <Grid className={disdata.type==="Thunderstorm"||disdata.type==="Rain"?"conrain":(disdata.type=="Clouds"?"concloud":(disdata.type=="Clear"?"consunny":"con"))} container>
                 <Grid className="item" item xs={12} >
                     <Nav dark={dark} setDark={setDark}/>
                 </Grid>
                 <Grid className="item" item xs={0} sm={3} />
                 <Grid className="item2"  item xs={12} sm={6}>
-                <Paper className="pap" elevation={3}>
+                <Paper className="pap" elevation={10}>
                         <div className="paper">
                         <TextField variant="outlined" label="Enter city name" value={value} onChange={(e) => setValue(e.target.value)}></TextField>
                         <Typography variant="h4" align="center">{value}</Typography>
                         <Button variant="contained" style={{ margin: "10px" }} color="primary" onClick={getValues}>Get</Button>
-                        {/* <Button variant="contained" style={{ margin: "10px" }} onClick={theme} color="secondary">{dark ? "Light Mode" : "Dark Mode"}</Button> */}
                         </div>
                         <Grid container spacing={2}>
                         <Grid item xs={2}/>
@@ -61,6 +67,9 @@ const App = () => {
                         <Paper className="temp">
                             <Typography variant="h5" align="center">
                                 {disdata.temp ? `Temp: ${disdata.temp} °C` : 'No results'}
+                            </Typography>
+                            <Typography variant="h6" align="center">
+                                {disdata.temp? `${disdata.type}`:""}
                             </Typography>
                         
                         </Paper>
@@ -82,7 +91,7 @@ const App = () => {
                         <Grid item xs={5}>
                             {disdata.temp &&
                         <Paper className="minmax">
-                        <Typography variant="h5" align="center">
+                        <Typography variant="h6" align="center">
                         Max:
                         </Typography>
                         <Typography variant="h5" align="center">
